@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Prenotazioni</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Prenotazioni</h1>
+    </header>
+    <main>
+      {% if prenotazioni %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data</th>
+            <th>Ora</th>
+            <th>Numero di ospiti</th>
+            <th>Area</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for prenotazione in prenotazioni %}
+          <tr>
+            <td>{{ prenotazione[0] }}</td>
+            <td>{{ prenotazione[1] }}</td>
+            <td>{{ prenotazione[2] }}</td>
+            <td>{{ prenotazione[3] }}</td>
+            <td>{{ prenotazione[4] }}</td>
+            <td>{{ prenotazione[5] }}</td>
+            <td>{{ prenotazione[6] }}</td>
+            <td>
+              <a href="{{ url_for('modifica', id=prenotazione[0]) }}"
+                >Modifica</a
+              >
+              <a
+                href="{{ url_for('cancella', id=prenotazione[0]) }}"
+                onclick="return confirm('Sei sicuro di voler cancellare questa prenotazione?')"
+                >Cancella</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>Non ci sono prenotazioni.</p>
+      {% endif %}
+      <a href="{{ url_for('index') }}" class="btn">Torna alla Home</a>
+    </main>
+  </body>
+</html>

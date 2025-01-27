@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modifica Prenotazione</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Modifica Prenotazione</h1>
+  </header>
+  <main>
+    <form method="POST" action="{{ url_for('modifica', id=prenotazione[0]) }}">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" value="{{ prenotazione[1] }}" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="{{ prenotazione[2] }}" required><br>
+
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="date" value="{{ prenotazione[3] }}" required><br>
+
+      <label for="time">Ora:</label>
+      <input type="time" id="time" name="time" value="{{ prenotazione[4] }}" required><br>
+
+      <label for="number">Numero di ospiti:</label>
+      <input type="number" id="number" name="number" value="{{ prenotazione[5] }}" min="1" required><br>
+
+      <label for="location">Area:</label>
+      <select id="location" name="location" required>
+        <option value="interno" {% if prenotazione[6] == 'interno' %}selected{% endif %}>Interno</option>
+        <option value="esterno" {% if prenotazione[6] == 'esterno' %}selected{% endif %}>Esterno</option>
+      </select><br>
+
+      <button type="submit">Salva Modifiche</button>
+    </form>
+    <a href="{{ url_for('lista_prenotazioni') }}">Annulla</a>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

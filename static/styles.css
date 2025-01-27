@@ -1,0 +1,201 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3e6f9;  
+  color: #4b2e83; 
+  line-height: 1.6;
+}
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3e6f9;  
+  color: #4b2e83; 
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://source.unsplash.com/1600x900/?luxury-restaurant') center/cover no-repeat;
+  color: #3d3d3d;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+header .hero h1 {
+  font-size: 3.5em;
+  margin: 0;
+  font-weight: 600;
+  color: #6a4e7f; 
+}
+
+header .hero p {
+  margin: 20px 0;
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #5c4b6f; 
+}
+
+header .btn {
+  background-color: #d8b6e2; 
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+header .btn:hover {
+  background-color:  #9c7bb4; 
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 40px 50px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out; 
+  background-color: #f9f2ff; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #9b7bbb; 
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  display: block;
+  color: #6e4c91; 
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #d2b6ff; 
+  font-size: 1em;
+}
+
+form button {
+  background-color: #9b7bbb; 
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7e5a94; 
+}
+
+#response-message {
+  font-size: 1.2em;
+  color: #7e5a94; 
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #6e4c91;  
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  margin-top: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+
+th {
+  background-color: #6e4c91; 
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+
+td {
+  padding: 12px;
+  text-align: left;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+
+th, td {
+  text-align: center;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1; 
+  color: #6e4c91; 
+  border: 2px solid #6e4c91; 
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px; 
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background-color: #e1e1e1;
+  color: #7e5a94;
+  border-color: #7e5a94;
+}
+
+.btn-container {
+  margin-top: 20px;
+}

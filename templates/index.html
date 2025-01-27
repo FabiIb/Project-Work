@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorante Da Sogno</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ristorante Da Sogno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  
+<body>
+  <!-- Header -->
+  <header>
+    <div class="hero">
+      <h1>Benvenuti al Ristorante "Da Sogno"</h1>
+      <p>Un’esperienza culinaria senza pari con cucina mediterranea</p>
+      <button id="book-button" class="btn">Prenota Ora</button> <!-- Bottone per aprire il form -->
+    </div>
+    <!-- Se ci sono prenotazioni, mostra la CTA -->
+<!-- Bottone secondario "Visualizza Prenotazioni" che appare se ci sono prenotazioni -->
+  {% if prenotazione_esistente %}
+    <div class="btn-container">
+      <a href="{{ url_for('lista_prenotazioni') }}" class="btn-secondary">Visualizza le Prenotazioni</a>
+    </div>
+  {% endif %}
+  </header>
+
+  <!-- Sezione principale -->
+  <main>
+    <section class="about">
+      <h2>Scopri il nostro ristorante</h2>
+      <p>Con piatti raffinati e un’atmosfera unica, il nostro ristorante offre il meglio della cucina italiana.</p>
+    </section>
+
+    <section class="hours">
+      <h2>Orari di apertura</h2>
+      <ul>
+        Pranzo: <strong>12:00 - 14:30</strong>
+        Cena: <strong>19:00 - 22:30</strong>
+      </ul>
+    </section>
+
+    <!-- Modulo di prenotazione -->
+    <section id="reservation-form-container" style="display: none;" class="form-container">
+      <h2>Inserisci i tuoi dati</h2>
+      <form method="POST" action="{{ url_for('prenotazione') }}">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="date">Data:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Ora:</label>
+        <input type="time" id="time" name="time" required><br>
+
+        <label for="number">Numero di ospiti:</label>
+        <input type="number" id="number" name="number" min="1" required><br>
+
+        <label for="location">Area:</label>
+        <select id="location" name="location" required>
+          <option value="interno">Interno</option>
+          <option value="esterno">Esterno</option>
+        </select><br>
+
+        <button type="submit">Prenota Tavolo</button>
+      </form>
+      <p id="response-message"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ristorante Da Sogno. Tutti i diritti riservati.</p>
+  </footer>
+</body>
+</html>
