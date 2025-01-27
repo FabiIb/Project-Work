@@ -6,9 +6,16 @@ __pycache__/
 venv/
 .env/
 
+# Cartelle erroneamente pushate
+lib/
+bin/
+
 # Editor and IDEs
 .idea/
 .vscode/
+
+# Files environment
+*.env
 
 # Logs and temporary files
 *.log
