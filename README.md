@@ -12,11 +12,11 @@ Prima di avviare il progetto, assicurati di avere i seguenti strumenti installat
 
 ## Installazione
 
-Segui i passaggi qui sotto per configurare l'ambiente e avviare il progetto.
-Per creare un ambiente virtuale e isolare le dipendenze del progetto, esegui il comando: python3 -m venv venv
-Per attivare l'ambiente virtuale esegui il comando source venv/bin/activate (per mac) venv\Scripts\activate (per Windows)
-Per installare le dipendenze del progetto, esegui: pip install flask
-Una volta che tutte le dipendenze sono state installate, puoi avviare l'applicazione con: python3 app.py
+# Segui i passaggi qui sotto per configurare l'ambiente e avviare il progetto.
+- Per creare un ambiente virtuale e isolare le dipendenze del progetto, esegui il comando: python3 -m venv venv
+- Per attivare l'ambiente virtuale esegui il comando source # venv/bin/activate (per mac) venv\Scripts\activate (per Windows)
+- Per installare le dipendenze del progetto, esegui: pip install flask
+- Una volta che tutte le dipendenze sono state installate, puoi avviare l'applicazione con: python3 app.py
 
 ### 1. Clona il repository
 
